@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors=require('cors');
+require('dotenv').config();
+
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/Todo', {
+mongoose.connect(process.env.mongoURL, {
     // useNewUrlParser: true,
     // useUnifiedTopology: true
 }).then(() => {
